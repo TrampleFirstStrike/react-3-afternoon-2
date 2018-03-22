@@ -16,7 +16,8 @@ class Search extends Component{
     
     
     search(e){
-        e.preventDefault()
+        e.preventDefault();
+
         const { searchTerm, searchType }=this.state
 
         axios
@@ -42,8 +43,8 @@ class Search extends Component{
     
     render(){
         // map over the blogResults and userResults here, replace the empty arrays.
-        const blogResults = []
-        const userResults = []
+        const blogResults = this.state.blogResults.map((blog, i) => <BlogTile key={i} blog = {blog} />)
+        const userResults = this.state.userResults.map((user, i) => <UserTile key={i} user = {user} />)
 
         return(
             <div className='content search-view' >

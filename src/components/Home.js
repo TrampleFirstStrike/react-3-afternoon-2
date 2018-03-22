@@ -13,7 +13,7 @@ class Home extends Component{
         }
     }
 
-    componentDidMount(){
+    componentWillMount(){
         axios
             .get('/api/featured')
             .then(results=>{
@@ -28,7 +28,8 @@ class Home extends Component{
 
     render(){
         // map over your recommended blogs here, replace null.
-        const posts = this.state.posts.map((c,i)=><BlogThumb key={i} blog={c}/>)
+        const posts = this.state.posts.map((c,i)=>
+          <BlogThumb key={i} blog={c}/>)
 
         return(
             <div className="content" >

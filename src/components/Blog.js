@@ -11,7 +11,7 @@ class Blog extends Component{
         }
     }
 
-   componentDidMount(){
+   componentWillMount(){
        axios
         .get(`/api/blog/${this.props.match.params.id}`)
         .then(results=>{

@@ -17,7 +17,7 @@ class Edit extends Component {
         this.no = this.no.bind(this);
     }
 
- componentDidMount(){
+ componentWillMount(){
      axios
         .get(`/api/blog/${this.props.match.params.id}`)
         .then(results=>{
